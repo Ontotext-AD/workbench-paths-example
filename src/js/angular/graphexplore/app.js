@@ -25,6 +25,7 @@ define([
         'angular/graphexplore/controllers/dependencies-chord.controller',
         'angular/graphexplore/controllers/graphs-visualizations.controller',
         'angular/graphexplore/controllers/graphs-config.controller',
+        'angular/graphexplore/controllers/paths.controller',
         'angular/graphexplore/directives/rdf-class-hierarchy.directive',
         'angular/graphexplore/directives/domain-range-graph.directive',
         'angular/graphexplore/directives/system-repo-warning.directive',
@@ -85,6 +86,11 @@ define([
                     controller: 'GraphConfigCtrl',
                     helpInfo: 'A visual graph config defines the SPARQL queries used to retrieve nodes and edges in the visual graph, as well as'
                                 + ' the starting point of visualisation.'
+                }).when('/paths', {
+                    templateUrl: 'pages/paths.html',
+                    controller: 'GraphPathsCtrl',
+                    title: 'Graph Paths',
+                    helpInfo: 'Find all paths in a graph.',
                 });
 
             $menuItemsProvider.addItem({
@@ -118,6 +124,13 @@ define([
                     href: 'graphs-visualizations/config/save',
                     children: []
                 }]
+            });
+
+            $menuItemsProvider.addItem({
+                label: 'Paths',
+                href: 'paths',
+                order: 5,
+                parent: 'Explore',
             });
         }
     });
