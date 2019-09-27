@@ -14,6 +14,17 @@ define([
 
         function GraphPathsCtrl($scope, $rootScope, $repositories, toastr, $timeout, $http, ClassInstanceDetailsService, AutocompleteService, $q, $location) {
 
+            $scope.getActiveRepository = function () {
+                return $repositories.getActiveRepository();
+            };
+
+            $scope.isLoadingLocation = function () {
+                return $repositories.isLoadingLocation();
+            };
+
+            $scope.hasActiveLocation = function () {
+                return $repositories.hasActiveLocation();
+            };
         }
     }
 );
