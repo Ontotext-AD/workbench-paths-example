@@ -78,7 +78,9 @@ define([
             }
 
             $scope.findPath = function (startNode, endNode) {
+                $scope.pathFinding = true;
                 findPath(startNode, endNode, [startNode], []).then(function (linksFound) {
+                    $scope.pathFinding = false;
                     renderGraph(_.flattenDeep(linksFound));
                 });
             }
