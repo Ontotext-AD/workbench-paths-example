@@ -25,6 +25,19 @@ define([
             $scope.hasActiveLocation = function () {
                 return $repositories.hasActiveLocation();
             };
+
+            function initForRepository() {
+                if (!$repositories.getActiveRepository()) {
+                    return;
+                }
+                $scope.getNamespacesPromise = ClassInstanceDetailsService.getNamespaces($scope.getActiveRepository());
+                $scope.getAutocompletePromise = AutocompleteService.checkAutocompleteStatus();
+            }
+
+            $scope.$on('repositoryIsSet', function(event, args) {
+                initForRepository();
+            });
+            initForRepository();
         }
     }
 );

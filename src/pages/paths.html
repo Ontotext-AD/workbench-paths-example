@@ -15,6 +15,35 @@
     </div>
 
     <div id="repository-is-set" ng-show="getActiveRepository() && !isLoadingLocation() && hasActiveLocation() && 'SYSTEM' !== getActiveRepository()">
-        {{getActiveRepository()}}
+        <div class="card mb-2">
+            <div class="card-block">
+                <h3>From</h3>
+                <p>Search for a start node</p>
+                <search-resource-input class="search-rdf-resources"
+                                       namespacespromise="getNamespacesPromise"
+                                       autocompletepromisestatus="getAutocompletePromise"
+                                       text-button=""
+                                       visual-button="Show"
+                                       visual-callback="startNode = uri"
+                                       empty="empty"
+                                       preserve-input="true">
+                </search-resource-input>
+            </div>
+        </div>
+        <div class="card mb-2">
+            <div class="card-block">
+                <h3>To</h3>
+                <p>Search for an end node</p>
+                <search-resource-input class="search-rdf-resources"
+                                       namespacespromise="getNamespacesPromise"
+                                       autocompletepromisestatus="getAutocompletePromise"
+                                       text-button=""
+                                       visual-button="Show"
+                                       visual-callback="findPath(startNode, uri)"
+                                       empty="empty"
+                                       preserve-input="true">
+                </search-resource-input>
+            </div>
+        </div>
     </div>
 </div>
