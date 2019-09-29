@@ -1,6 +1,6 @@
 # workbench-paths-example
 
-A simple application that extends GraphDB workbench with a page that finds and visualize paths between two nodes in a graph.
+A simple application that extends [GraphDB workbench](https://github.com/Ontotext-AD/graphdb-workbench) with a page that finds and visualize paths between two nodes in a graph.
 This is a sample project, created entirely for training purposes.
 
 Additional information can be found at "Extending GraphDB Workbench" or other pages from [GraphDB documentation](http://graphdb.ontotext.com/) 
